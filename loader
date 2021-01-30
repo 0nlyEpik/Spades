@@ -2812,3 +2812,282 @@ coming_soon.TextSize = 14.000
 coming_soon.TextWrapped = true
 
 UICorner_57.Parent = coming_soon
+
+-- Scripts:
+
+local function QHLK_fake_script() -- exit.LocalScript 
+	local script = Instance.new('LocalScript', exit)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+
+end
+coroutine.wrap(QHLK_fake_script)()
+local function KWRGG_fake_script() -- mods.LocalScript 
+	local script = Instance.new('LocalScript', mods)
+
+	local frame = script.Parent.Parent.gun_mods
+	local open = false
+
+	script.Parent.MouseButton1Click:Connect(function()
+		if frame.Visible == false then
+			frame.Visible = true
+		end
+	end)
+end
+coroutine.wrap(KWRGG_fake_script)()
+local function OLLPGEL_fake_script() -- Buy_Weapons.LocalScript 
+	local script = Instance.new('LocalScript', Buy_Weapons)
+
+	local frame = script.Parent.Parent.Buy_Weapons
+	local open = false
+
+	script.Parent.MouseButton1Click:Connect(function()
+		if frame.Visible == false then
+			frame.Visible = true
+		end
+	end)
+end
+coroutine.wrap(OLLPGEL_fake_script)()
+local function QFIXJB_fake_script() -- tp.LocalScript 
+	local script = Instance.new('LocalScript', tp)
+
+	local frame = script.Parent.Parent.tp
+	local open = false
+
+	script.Parent.MouseButton1Click:Connect(function()
+		if frame.Visible == false then
+			frame.Visible = true
+		end
+	end)
+end
+coroutine.wrap(QFIXJB_fake_script)()
+local function VRRGZBI_fake_script() -- main.LocalScript 
+	local script = Instance.new('LocalScript', main)
+
+	local UserInputService = game:GetService("UserInputService")
+
+	local gui = script.Parent
+
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = gui:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y), 'Out', 'Linear', 0.3, true); -- drag speed
+	end
+
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(VRRGZBI_fake_script)()
+local function LMZI_fake_script() -- exit_2.LocalScript 
+	local script = Instance.new('LocalScript', exit_2)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+
+end
+coroutine.wrap(LMZI_fake_script)()
+local function QBNV_fake_script() -- tp_2.LocalScript 
+	local script = Instance.new('LocalScript', tp_2)
+
+	local UserInputService = game:GetService("UserInputService")
+
+	local gui = script.Parent
+
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = gui:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y), 'Out', 'Linear', 0.3, true); -- drag speed
+	end
+
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(QBNV_fake_script)()
+local function OCWC_fake_script() -- exit_3.LocalScript 
+	local script = Instance.new('LocalScript', exit_3)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+
+end
+coroutine.wrap(OCWC_fake_script)()
+local function AUMTUW_fake_script() -- gun_mods.LocalScript 
+	local script = Instance.new('LocalScript', gun_mods)
+
+	local UserInputService = game:GetService("UserInputService")
+
+	local gui = script.Parent
+
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = gui:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y), 'Out', 'Linear', 0.3, true); -- drag speed
+	end
+
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(AUMTUW_fake_script)()
+local function HQKOEC_fake_script() -- exit_4.LocalScript 
+	local script = Instance.new('LocalScript', exit_4)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+
+end
+coroutine.wrap(HQKOEC_fake_script)()
+local function VEIIH_fake_script() -- Buy_Weapons_2.LocalScript 
+	local script = Instance.new('LocalScript', Buy_Weapons_2)
+
+	local UserInputService = game:GetService("UserInputService")
+
+	local gui = script.Parent
+
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = gui:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y), 'Out', 'Linear', 0.3, true); -- drag speed
+	end
+
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(VEIIH_fake_script)()
+local function SMBIS_fake_script() -- ScreenGui.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	local groupID = 9047631
+
+
+
+
+	local plr = game.Players.LocalPlayer
+
+	script.Parent.Enabled = false
+	repeat wait() until plr.Character
+
+	local gui = script.Parent
+
+
+
+	if plr:IsInGroup(groupID) then
+		script.Parent.Enabled = true
+	else
+		player:Kick("Not Whitelisted")
+	end
+end)
+end
+coroutine.wrap(SMBIS_fake_script)()
